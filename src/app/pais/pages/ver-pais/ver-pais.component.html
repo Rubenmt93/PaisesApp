@@ -1,0 +1,51 @@
+<div *ngIf="!pais; else divPais"
+    class="alert alert-info">
+    Espere un momento 
+</div>
+<ng-template #divPais>
+    <div class="row">
+        <div class="col-12">
+        <h1>Pais: <small> {{ pais[0].name.common }} </small></h1>
+        </div>
+    </div>
+     <div class="row">
+         <div class="col-4">
+             <img [src]="pais[0].flags.svg" class="img-thumbnail"/>
+         </div>
+         <div class="col">
+             <h3>Informacion</h3>
+             <ul class="list-group">
+                <li class="list-group-item">
+                    <strong> Poblacion</strong> {{pais[0].population |number}}  
+                </li>
+                <li class="list-group-item">
+                    <strong> Codigo numérico</strong> {{pais[0].ccn3}}  
+                </li>
+                <li class="list-group-item">
+                    <strong> Codigo alpha3</strong> {{pais[0].cca3}}  
+                </li>
+             </ul>
+         </div>
+         <h3>Traducciones</h3>
+         <div class="row">
+            <div class="clo">
+                <span class="badge bg-primary mr-1">{{pais[0].translations.ara.common}}</span>
+                <span class="badge bg-primary mr-1">{{pais[0].translations.ita.common}}</span>
+                <span class="badge bg-primary mr-1">{{pais[0].translations.ces.common}}</span>
+                <span class="badge bg-primary mr-1">{{pais[0].translations.per.common}}</span>
+                <span class="badge bg-primary mr-1">{{pais[0].translations.por.common}}</span>
+                <span class="badge bg-primary mr-1">{{pais[0].translations.slk.common}}</span>
+                <span class="badge bg-primary mr-1">{{pais[0].translations.zho.common}}</span>
+                <span class="badge bg-primary mr-1">{{pais[0].translations.urd.common}}</span>
+                <span class="badge bg-primary mr-1">{{pais[0].translations.pol.common}}</span>
+
+            </div>
+         </div>
+
+         <pre class="mt-5">
+            {{pais[0] |json}}
+         </pre>
+     </div>
+
+</ng-template>
+

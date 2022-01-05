@@ -1,0 +1,13 @@
+
+<div class= "animate__animated animate__rubberBand">
+    <form (ngSubmit)="buscar()" autocomplete="off" >
+        <input type="text" 
+               [(ngModel)]="termino"
+               name="termino"
+               class="form-control "
+               (input)='teclaPresionada( $event)'
+               
+               [placeholder]= "placeholder" />
+    </form>
+    
+</div>
